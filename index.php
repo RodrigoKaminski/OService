@@ -1,3 +1,15 @@
+<?php
+require_once './model/config.php';
+
+$logado = isset($_SESSION['usuario']);
+
+if($logado != true)
+{
+    header('Location: /login.html');
+}
+
+?>
+
 <!DOCTYPE html>
 
 
@@ -31,10 +43,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-                         <li class="active"><a href="index.html">Listagem de OS</a></li>
+                         <li class="active"><a href="index.php">Listagem de OS</a></li>
                          <li><a href="#" data-toggle="modal" data-target="#modal-abrir">Abrir</a></li>
             
           </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li><a id="logout" href='#'>Logout</a></li>
+            </ul>
           
         </div><!--/.nav-collapse -->
       </div>
@@ -80,11 +96,7 @@
           <div class="modal-body">
                 
                 <div class="form-horizontal">
-      <div class="form-group">
-    <label class="col-sm-4 control-label">Solicitante</label>
-    <div class="col-sm-8">
-      <p class="form-control-static campo-solicitante">email@example.com</p>
-    </div>
+      
     </div>
     
     <div class="form-group">
@@ -138,13 +150,7 @@
 <fieldset>
 
 <!-- Text input-->
-<div class="form-group">
-  <label class="col-md-3 control-label" for="solicitante">Solicitante</label>  
-  <div class="col-md-4">
-  <input id="solicitante" name="solicitante" type="text" placeholder="" class="form-control input-md">
-    
-  </div>
-</div>
+
 
 <!-- Textarea -->
 <div class="form-group">

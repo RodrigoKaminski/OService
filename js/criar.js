@@ -4,11 +4,7 @@ $(document).ready(function(){
                     $('#alerta-form').addClass('hide');
                     var valido = true;
                     // Valida o form
-                   if ($('#solicitante').val() == '')
-                   {
-                       $('#solicitante').parent().parent().addClass('has-error');
-                       valido = false;
-                    }
+                   
                    
                    if ($('#solicitacao').val() == '')
                    {
@@ -21,7 +17,7 @@ $(document).ready(function(){
                    if (valido == true)
                    {
                        var dados = {
-                         solicitante: $('#solicitante').val(),
+                         
                          solicitacao: $('#solicitacao').val(),
                          departamento: $('#departamento').val()
                        };
